@@ -5,7 +5,7 @@ import { BookshelfTypes as ShelfType } from "../core/Enums";
 // Components
 import BookShelf from "../components/BookShelf";
 
-const LibraryPage = ({ books, moveBookCallBack }) => {
+const LibraryPage = ({ books, callBackMoveBook }) => {
 
     const bookshelves = [
         { name: ShelfType.Reading, text: ShelfName.READING },
@@ -25,7 +25,7 @@ const LibraryPage = ({ books, moveBookCallBack }) => {
                             <BookShelf
                                 title={shelf.text}
                                 books={books.filter((book) => book.shelf === shelf.name)}
-                                moveBookCallBack={moveBookCallBack}
+                                callBackMoveBook={callBackMoveBook}
                             />
                         )
                     }

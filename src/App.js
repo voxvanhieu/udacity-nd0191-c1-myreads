@@ -6,6 +6,7 @@ import * as BooksApi from "./BooksAPI";
 // Components 
 import NotFound from "./pages/NotFound";
 import LibraryPage from "./pages/LibraryPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   // Initialize state to manage books data in component
@@ -30,8 +31,8 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LibraryPage books={books} moveBookCallBack={moveBook} />} />
-          {/* <Route path="/search" element={<SearchComponent keyWord={keyWord} moveBookCallBack={moveBook} />} /> */}
+          <Route path="/" element={<LibraryPage books={books} callBackMoveBook={moveBook} />} />
+          <Route path="/search" element={<SearchPage watchingBooks={books} callBackMoveBook={moveBook} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

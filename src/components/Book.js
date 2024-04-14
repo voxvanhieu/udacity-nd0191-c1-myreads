@@ -1,8 +1,8 @@
 import { BookshelfNames } from "../core/Constants";
 import { BookshelfTypes } from "../core/Enums";
 
-const Book = ({ book, moveBookCallBack }) => {
-    let bookThumbnail = book.imageLinks.smallThumbnail ?? "";
+const Book = ({ book, callBackMoveBook }) => {
+    let bookThumbnail = book?.imageLinks?.smallThumbnail ?? "";
 
     return (
         <div className="book">
@@ -13,7 +13,7 @@ const Book = ({ book, moveBookCallBack }) => {
                         value={book.shelf ? book.shelf : "none"}
                         onChange={async (e) => {
                             const shelf = e.target.value;
-                            moveBookCallBack(book, shelf);
+                            callBackMoveBook(book, shelf);
                         }}
                     >
                         <option value="x" disabled>

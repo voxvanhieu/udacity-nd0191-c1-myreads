@@ -1,6 +1,6 @@
 import Book from "./Book";
 
-const BookShelf = ({ title, books, moveBookCallBack }) => {
+const BookShelf = ({ title, books, callBackMoveBook }) => {
   // console.log(title, books[0].id);
 
   return (
@@ -11,7 +11,7 @@ const BookShelf = ({ title, books, moveBookCallBack }) => {
           {
             books.map((book) => (
               <li key={book.id}>
-                <Book book={book} moveBookCallBack={moveBookCallBack} />
+                <Book book={book} callBackMoveBook={callBackMoveBook} />
               </li>
             ))
           }
