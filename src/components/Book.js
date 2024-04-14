@@ -2,12 +2,12 @@ import { BookshelfNames } from "../core/Constants";
 import { BookshelfTypes } from "../core/Enums";
 
 const Book = ({ book, callBackMoveBook }) => {
-    let bookThumbnail = book?.imageLinks?.smallThumbnail ?? "";
+    let bookThumbnail = book?.imageLinks?.smallThumbnail ?? "/no-image.jpg";
 
     return (
         <div className="book">
             <div className="book-top">
-                <div className="book-cover" style={{ backgroundImage: `url("${bookThumbnail}")` }}></div>
+                <div className="book-cover" style={{ backgroundImage: `url("${bookThumbnail}")`, backgroundSize: "contain" }}></div>
                 <div className="book-shelf-changer">
                     <select
                         value={book.shelf ? book.shelf : "none"}

@@ -17,7 +17,7 @@ const SearchPage = ({ watchingBooks, callBackMoveBook }) => {
             }
 
             BooksApi
-                .search(searchQuery, 50)
+                .search(searchQuery, 100)
                 .then(response => {
                     if (!response || response.error == 'empty query') {
                         return setFilteredBooks([]);
